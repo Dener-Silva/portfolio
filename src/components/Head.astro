@@ -1,0 +1,31 @@
+---
+const title = "title";
+const description =
+    "Fullstack developer with focus on backend. I value simple and intuitive solutions.";
+---
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit&family=Work+Sans&display=swap"
+        rel="stylesheet"
+    />
+    <!-- SEO -->
+    <title>Dener Rosa's Portfolio</title>
+    <meta name="description" content={description} />
+    <!-- Open Graph -->
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Technocat Games" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("og-image.png", Astro.site)} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tcatdev" />
+    <meta name="twitter:creator" content="@tcatdev" />
+</head>

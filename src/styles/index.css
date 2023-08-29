@@ -1,0 +1,90 @@
+:root {
+    --client-width-safe: var(--client-width, 100vw);
+    --column-width: min(var(--client-width-safe) - 40px, 880px)
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: large;
+    background-image: url("/noise.svg");
+    background-size: 100px;
+}
+
+.main-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--column-width);
+}
+
+header {
+    margin: 20px;
+    border-radius: 40px;
+    box-shadow: 0px 5px 20px #1c289180;
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-areas:
+        ". . ."
+        ". t ."
+        ". d .";
+    grid-template-rows: 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-image: radial-gradient(#264de480, #1c289180), url("/noise.svg");
+    background-size: 100%, 200px;
+    animation: gradient 60s linear infinite;
+    backdrop-filter: blur(20px);
+}
+
+@keyframes gradient {
+    0% {
+        filter: hue-rotate(360deg);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+.header-title {
+    grid-area: t;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 440px;
+    color: white;
+    font-size: 60pt;
+    line-height: 75%;
+    font-family: 'kanit', regular;
+    text-shadow: 0px 0px 10px #fff8;
+}
+
+.header-description {
+    grid-area: d;
+    height: max-content;
+    color: black;
+    padding: 20px 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #fff8;
+    box-shadow: 0px 0px 20px white;
+}
+
+.body-description {
+    width: calc(100% - 80px);
+    margin: 20px;
+    text-justify: inter-word;
+}
+
+@media only screen and (max-width: 540px) {
+    .header-title {
+        width: 294px;
+    }
+}

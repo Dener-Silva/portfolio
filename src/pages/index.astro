@@ -1,0 +1,31 @@
+---
+import "../styles/index.css";
+import Head from "../components/Head.astro";
+import StackCard from "../components/StackCard.astro";
+import Stack from "../components/Stack.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+    <Head />
+    <body>
+        <div class="main-column">
+            <header>
+                <div class="header-title">
+                    <span style="text-align: left;">DENER</span>
+                    <span style="text-align: right;">ROSA</span>
+                </div>
+                <div class="header-description">
+                    <span>Fullstack developer with focus on backend.</span>
+                </div>
+            </header>
+            <span class="body-description"
+                >In my career I have brought creativity in problem solving. I
+                value simple and intuitive solutions. I believe in sharing
+                experiences with the team to reach better results.</span
+            >
+            <Stack />
+        </div>
+        <div style="height: 2000px;"></div>
+    </body>
+</html>

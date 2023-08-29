@@ -1,0 +1,63 @@
+---
+import StackCard from "./StackCard.astro";
+import "../styles/stack.css";
+---
+
+<script>
+    const cards: NodeListOf<HTMLElement> =
+        document.querySelectorAll(".stack-card");
+    const resetButton: HTMLButtonElement | null =
+        document.querySelector(".reset-button");
+    if (!resetButton) {
+        throw new Error("Reset button not found");
+    }
+
+    // Hack for Firefox because it persists the button state across
+    // page loads
+    resetButton.disabled = true;
+
+    // It's humanly impossible to reach the highest zIndex value,
+    // so we just increment it to make sure the active card is on top
+    let zIndex = 0;
+    for (const card of cards) {
+        card.onclick = () => {
+            zIndex++;
+            card.style.zIndex = zIndex.toString();
+        };
+        const x: HTMLElement | null = card.querySelector(".x");
+        if (x) {
+            x.onclick = () => {
+                card.style.animation = "fade-out 500ms forwards";
+            };
+        }
+        card.addEventListener("animationend", (e) => {
+            if (e.animationName === "fade-out") {
+                card.style.display = "none";
+                resetButton.disabled = false;
+            }
+        });
+    }
+
+    resetButton.onclick = () => {
+        for (const card of cards) {
+            if (card.style.display === "none") {
+                card.style.display = "flex";
+                card.style.animation = "fade-in 500ms forwards";
+                card.style.removeProperty("z-index");
+            }
+        }
+        resetButton.disabled = true;
+    };
+</script>
+<div class="stack">
+    <StackCard title="Database" src="/database.svg" position={[80, 20]}>
+        a
+    </StackCard>
+    <StackCard title="Frontend" src="/client.svg" position={[-20, 120]}>
+        a
+    </StackCard>
+    <StackCard title="Backend" src="/server.svg" position={[30, 70]}>
+        a
+    </StackCard>
+</div>
+<button class="reset-button" disabled>Reset</button>
