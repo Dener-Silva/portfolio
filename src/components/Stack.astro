@@ -43,9 +43,10 @@ import "../styles/stack.css";
             if (card.style.display === "none") {
                 card.style.display = "flex";
                 card.style.animation = "fade-in 500ms forwards";
-                card.style.removeProperty("z-index");
             }
+            card.style.removeProperty("z-index");
         }
+        zIndex = 0;
         resetButton.disabled = true;
     };
 </script>

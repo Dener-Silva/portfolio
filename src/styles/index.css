@@ -16,6 +16,10 @@ body {
     background-size: 100px;
 }
 
+h1 {
+    font-family: 'kanit', regular;
+}
+
 .main-column {
     display: flex;
     flex-direction: column;
