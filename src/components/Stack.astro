@@ -51,13 +51,25 @@ import "../styles/stack.css";
     };
 </script>
 <div class="stack">
-    <StackCard title="Database" src="/database.svg" position={[80, 20]}>
+    <StackCard
+        title="Database"
+        src={`${import.meta.env.BASE_URL}database.svg`}
+        position={[80, 20]}
+    >
         a
     </StackCard>
-    <StackCard title="Frontend" src="/client.svg" position={[-20, 120]}>
+    <StackCard
+        title="Frontend"
+        src={`${import.meta.env.BASE_URL}client.svg`}
+        position={[-20, 120]}
+    >
         a
     </StackCard>
-    <StackCard title="Backend" src="/server.svg" position={[30, 70]}>
+    <StackCard
+        title="Backend"
+        src={`${import.meta.env.BASE_URL}server.svg`}
+        position={[30, 70]}
+    >
         a
     </StackCard>
 </div>

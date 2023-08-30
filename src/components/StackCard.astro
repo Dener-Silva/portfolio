@@ -8,7 +8,11 @@ import "../styles/stack-card.css";
         <img src={src} width="30px" height="30px" />
         <span style="flex-grow: 1;">{title}</span>
         <div class="x">
-            <img src="/x.svg" width="15px" height="15px" />
+            <img
+                src=`${import.meta.env.BASE_URL}x.svg`
+                width="15px"
+                height="15px"
+            />
         </div>
     </div>
     <div class="content">
