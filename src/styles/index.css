@@ -87,6 +87,13 @@ header {
     text-justify: inter-word;
 }
 
+.experience-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
 @media only screen and (max-width: 540px) {
     .header-title {
         width: 294px;

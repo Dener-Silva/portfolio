@@ -1,0 +1,17 @@
+---
+const { src, technologies } = Astro.props;
+import "../styles/experience-card.css";
+import TechnologyIcon from "./TechnologyIcon.astro";
+---
+
+<div class="experience-card">
+    <img src={src} />
+    <slot />
+    <div class="technologies-footer">
+        {
+            technologies.map((technology: string) => {
+                return <TechnologyIcon name={technology} />;
+            })
+        }
+    </div>
+</div>

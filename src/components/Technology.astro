@@ -1,8 +1,10 @@
 ---
-const { src, name } = Astro.props;
+import "../styles/technology.css";
+import TechnologyIcon from "./TechnologyIcon.astro";
+const { name } = Astro.props;
 ---
 
 <div class="technology">
-    <img src={src} />
+    <TechnologyIcon name={name} />
     <span>{name}</span>
 </div>
