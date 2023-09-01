@@ -1,0 +1,64 @@
+.experience {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px #0008;
+}
+
+.experience-img {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-img>img {
+    height: 200px;
+    border-radius: 20px;
+    aspect-ratio: 1.6;
+    object-fit: cover;
+    flex-grow: 0;
+}
+
+.experience-content {
+    align-items: start;
+    padding: 0px 20px 20px 20px;
+    flex-grow: 1;
+}
+
+.technologies {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 10px;
+    flex-grow: 0;
+}
+
+.experience>hr {
+    border: 1px solid grey;
+    background-color: grey;
+    border-radius: 1px;
+    margin: 20px 0px 20px 0px;
+}
+
+@media only screen and (max-width: 800px) {
+    .experience {
+        flex-direction: column;
+    }
+
+    .technologies {
+        flex-direction: row;
+        margin: 10px 20px;
+    }
+
+    .experience>hr {
+        margin: 0px 20px 0px 20px;
+    }
+
+    .experience-content {
+        align-items: start;
+        flex-grow: 1;
+    }
+
+}

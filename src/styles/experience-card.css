@@ -2,6 +2,14 @@
     border-radius: 25px;
     width: 100%;
     box-shadow: 0px 5px 20px #0008;
+    background-color: white;
+    transition: margin 300ms ease-in-out, width 300ms ease-in-out;
+}
+
+.experience-card:hover {
+    margin: -10px;
+    z-index: 1;
+
 }
 
 .experience-card>img {
