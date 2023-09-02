@@ -20,18 +20,11 @@ h1 {
     font-family: 'kanit', regular;
 }
 
-.main-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: var(--column-width);
-}
-
 header {
     margin: 20px;
     border-radius: 40px;
     box-shadow: 0px 5px 20px #1c289180;
-    width: 100%;
+    width: var(--column-width);
     height: 400px;
     display: grid;
     grid-template-areas:
@@ -82,14 +75,14 @@ header {
 }
 
 .body-description {
-    width: calc(100% - 80px);
+    width: var(--column-width);
     margin: 20px;
     text-justify: inter-word;
 }
 
 .experience-cards {
     margin-top: 40px;
-    width: 100%;
+    width: var(--column-width);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;

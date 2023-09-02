@@ -1,24 +1,22 @@
 ---
 const { src, technologies, company, backgroundColor } = Astro.props;
 import "../styles/experience.css";
-import TechnologyIcon from "./TechnologyIcon.astro";
+import Technology from "./Technology.astro";
 ---
 
 <div class="experience">
     <div class="experience-img" style={`background-color: ${backgroundColor};`}>
         <img class="experience-img" src={src} />
     </div>
-
+    <h3 class="experience-company">{company}</h3>
+    <div class="experience-description">
+        <slot />
+    </div>
     <div class="technologies">
         {
             technologies.map((technology: string) => {
-                return <TechnologyIcon name={technology} />;
+                return <Technology name={technology} />;
             })
         }
-    </div>
-    <hr />
-    <div class="experience-content">
-        <h3>{company}</h3>
-        <slot />
     </div>
 </div>

@@ -1,13 +1,19 @@
 .experience {
-    display: flex;
-    width: 100%;
+    width: var(--column-width);
     background-color: white;
-    border-radius: 20px;
-    box-shadow: 0px 5px 20px #0008;
+    border-radius: 40px;
+    box-shadow: 0px 5px 20px #0004;
+    display: grid;
+    grid-template: 0fr 1fr 0fr / 0fr 1fr 1fr;
+    grid-template-areas:
+        "i c y"
+        "i d d"
+        "i t t";
 }
 
 .experience-img {
-    border-radius: 20px;
+    grid-area: i;
+    border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,50 +21,38 @@
 
 .experience-img>img {
     height: 200px;
-    border-radius: 20px;
+    border-radius: 40px;
     aspect-ratio: 1.6;
     object-fit: cover;
-    flex-grow: 0;
 }
 
-.experience-content {
+.experience-company {
+    padding: 0px 20px;
+    grid-area: c;
+}
+
+.experience-description {
+    grid-area: d;
     align-items: start;
-    padding: 0px 20px 20px 20px;
-    flex-grow: 1;
+    padding: 0px 20px;
 }
 
 .technologies {
+    grid-area: t;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
     gap: 10px;
-    margin: 20px 10px;
-    flex-grow: 0;
-}
-
-.experience>hr {
-    border: 1px solid grey;
-    background-color: grey;
-    border-radius: 1px;
-    margin: 20px 0px 20px 0px;
 }
 
 @media only screen and (max-width: 800px) {
     .experience {
-        flex-direction: column;
+        grid-template: 0fr 0fr 0fr 0fr / 1fr 1fr;
+        grid-template-areas:
+            "i i"
+            "c y"
+            "d d"
+            "t t";
     }
-
-    .technologies {
-        flex-direction: row;
-        margin: 10px 20px;
-    }
-
-    .experience>hr {
-        margin: 0px 20px 0px 20px;
-    }
-
-    .experience-content {
-        align-items: start;
-        flex-grow: 1;
-    }
-
 }
