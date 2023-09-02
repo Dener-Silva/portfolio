@@ -1,11 +1,11 @@
 ---
-import StackCard from "./StackCard.astro";
-import "../styles/stack.css";
+import AboutCard from "./AboutCard.astro";
+import "../styles/about.css";
 ---
 
 <script>
     const cards: NodeListOf<HTMLElement> =
-        document.querySelectorAll(".stack-card");
+        document.querySelectorAll(".about-card");
     const resetButton: HTMLButtonElement | null =
         document.querySelector(".reset-button");
     if (!resetButton) {
@@ -50,27 +50,27 @@ import "../styles/stack.css";
         resetButton.disabled = true;
     };
 </script>
-<div class="stack">
-    <StackCard
+<div class="about">
+    <AboutCard
         title="Database"
         src={`${import.meta.env.BASE_URL}database.svg`}
         position={[80, 20]}
     >
         a
-    </StackCard>
-    <StackCard
+    </AboutCard>
+    <AboutCard
         title="Frontend"
         src={`${import.meta.env.BASE_URL}client.svg`}
         position={[-20, 120]}
     >
         a
-    </StackCard>
-    <StackCard
+    </AboutCard>
+    <AboutCard
         title="Backend"
         src={`${import.meta.env.BASE_URL}server.svg`}
         position={[30, 70]}
     >
         a
-    </StackCard>
+    </AboutCard>
 </div>
 <button class="reset-button" disabled>Reset</button>

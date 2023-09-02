@@ -1,10 +1,10 @@
-.stack {
+.about {
     position: relative;
     width: var(--column-width);
     height: 300px;
 }
 
-.stack::before {
+.about::before {
     font-size: xx-large;
     font-family: 'kanit' regular;
     content: ":)";

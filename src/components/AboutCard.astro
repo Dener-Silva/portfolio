@@ -1,9 +1,9 @@
 ---
 const { src, title, position } = Astro.props;
-import "../styles/stack-card.css";
+import "../styles/about-card.css";
 ---
 
-<div class="stack-card" style={`left: ${position[0]}px; top: ${position[1]}px`}>
+<div class="about-card" style={`left: ${position[0]}px; top: ${position[1]}px`}>
     <div class="title">
         <img src={src} width="30px" height="30px" />
         <span style="flex-grow: 1;">{title}</span>

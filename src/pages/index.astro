@@ -1,7 +1,7 @@
 ---
 import "../styles/index.css";
 import Head from "../components/Head.astro";
-import Stack from "../components/Stack.astro";
+import About from "../components/About.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import Technology from "../components/Technology.astro";
 import Experience from "../components/Experience.astro";
@@ -11,22 +11,24 @@ import Experience from "../components/Experience.astro";
 <html lang="en" prefix="og: https://ogp.me/ns#">
     <Head />
     <body>
-        <header>
-            <div class="header-title">
-                <span style="text-align: left;">DENER</span>
-                <span style="text-align: right;">ROSA</span>
-            </div>
-            <div class="header-description">
-                <span>Fullstack developer with focus on backend.</span>
-            </div>
-        </header>
-        <h1>About Me</h1>
-        <span class="body-description"
-            >In my career I have brought creativity in problem solving. I value
-            simple and intuitive solutions. I believe in sharing experiences
-            with the team to reach better results.</span
-        >
-        <Stack />
+        <div class="geometric-background">
+            <header>
+                <div class="header-title">
+                    <span style="text-align: left;">DENER</span>
+                    <span style="text-align: right;">ROSA</span>
+                </div>
+                <div class="header-description">
+                    <span>Fullstack developer with focus on backend.</span>
+                </div>
+            </header>
+            <h1>About Me</h1>
+            <span class="body-description"
+                >In my career I have brought creativity in problem solving. I
+                value simple and intuitive solutions. I believe in sharing
+                experiences with the team to reach better results.</span
+            >
+            <About />
+        </div>
         <h1>Experience</h1>
         <Experience
             backgroundColor="#0267b2"

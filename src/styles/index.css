@@ -16,6 +16,15 @@ body {
     background-size: 100px;
 }
 
+.geometric-background {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/colorful-2174045_1920.png");
+    background-size: cover;
+}
+
 h1 {
     font-family: 'kanit', regular;
 }
@@ -23,7 +32,6 @@ h1 {
 header {
     margin: 20px;
     border-radius: 40px;
-    box-shadow: 0px 5px 20px #1c289180;
     width: var(--column-width);
     height: 400px;
     display: grid;
@@ -34,10 +42,6 @@ header {
     grid-template-rows: 1fr 2fr 1fr;
     align-items: center;
     justify-items: center;
-    background-image: radial-gradient(#264de480, #1c289180), url("/noise.svg");
-    background-size: 100%, 200px;
-    animation: gradient 60s linear infinite;
-    backdrop-filter: blur(20px);
 }
 
 @keyframes gradient {
