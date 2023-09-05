@@ -1,10 +1,10 @@
 ---
 import "../styles/technology.css";
 import TechnologyIcon from "./TechnologyIcon.astro";
-const { name } = Astro.props;
+const { name, style } = Astro.props;
 ---
 
-<div class="technology">
+<div class="technology" style={style}>
     <TechnologyIcon name={name} />
     <span>{name}</span>
 </div>

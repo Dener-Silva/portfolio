@@ -2,8 +2,7 @@
 import "../styles/index.css";
 import Head from "../components/Head.astro";
 import About from "../components/About.astro";
-import ExperienceCard from "../components/ExperienceCard.astro";
-import Technology from "../components/Technology.astro";
+import PersonalProjectCard from "../components/PersonalProjectCard.astro";
 import Experience from "../components/Experience.astro";
 ---
 
@@ -21,12 +20,6 @@ import Experience from "../components/Experience.astro";
                     <span>Fullstack developer with focus on backend.</span>
                 </div>
             </header>
-            <h1>About Me</h1>
-            <span class="body-description"
-                >In my career I have brought creativity in problem solving. I
-                value simple and intuitive solutions. I believe in sharing
-                experiences with the team to reach better results.</span
-            >
             <About />
         </div>
         <h1>Experience</h1>
@@ -66,16 +59,16 @@ import Experience from "../components/Experience.astro";
                 ferramentas em Python para auxiliar na análise de logs.</span
             >
         </Experience>
-        <div class="experience-cards">
-            <ExperienceCard
+        <div class="personal-project-cards">
+            <PersonalProjectCard
                 src={`${import.meta.env.BASE_URL}embraer.webp`}
                 technologies={["Java", "Oracle Database"]}
             />
-            <ExperienceCard
+            <PersonalProjectCard
                 src={`${import.meta.env.BASE_URL}cardif.svg`}
                 technologies={["AngularJS", "Java", "Spring"]}
             />
-            <ExperienceCard
+            <PersonalProjectCard
                 src={`${import.meta.env.BASE_URL}pronto.png`}
                 technologies={["React", "NodeJS", "Hasura", "PostgreSQL"]}
             />

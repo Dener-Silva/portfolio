@@ -78,13 +78,7 @@ header {
     box-shadow: 0px 0px 20px white;
 }
 
-.body-description {
-    width: var(--column-width);
-    margin: 20px;
-    text-justify: inter-word;
-}
-
-.experience-cards {
+.personal-project-cards {
     margin-top: 40px;
     width: var(--column-width);
     display: grid;

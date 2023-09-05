@@ -1,4 +1,4 @@
-.experience-card {
+.personal-project-card {
     border-radius: 25px;
     width: 100%;
     box-shadow: 0px 5px 20px #0004;
@@ -6,13 +6,13 @@
     transition: margin 300ms ease-in-out, width 300ms ease-in-out;
 }
 
-.experience-card:hover {
+.personal-project-card:hover {
     margin: -10px;
     z-index: 1;
 
 }
 
-.experience-card>img {
+.personal-project-card>img {
     border-radius: 25px;
     width: 100%;
     aspect-ratio: 1.6;
