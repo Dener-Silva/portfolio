@@ -33,8 +33,10 @@
 
 .x {
     padding: 7.5px;
+    border: 0 solid transparent;
+    background-color: transparent;
     border-radius: 15px;
-    height: 15px;
+    height: 30px;
     transition: background-color 300ms linear;
 }
 

@@ -5,15 +5,16 @@ import "../styles/about-card.css";
 
 <div class="about-card" style={`left: ${position[0]}px; top: ${position[1]}px`}>
     <div class="title">
-        <img src={src} width="30px" height="30px" />
+        <img src={src} width="30px" height="30px" alt="" />
         <span style="flex-grow: 1;">{title}</span>
-        <div class="x">
+        <button class="x" title="Close">
             <img
                 src=`${import.meta.env.BASE_URL}x.svg`
                 width="15px"
                 height="15px"
+                alt="Close"
             />
-        </div>
+        </button>
     </div>
     <div class="content">
         <slot />
