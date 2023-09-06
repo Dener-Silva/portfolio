@@ -1,10 +1,10 @@
 ---
 import { assert } from "./Assert";
-const { name, style } = Astro.props;
+const { name } = Astro.props;
 const src = `${import.meta.env.BASE_URL}${name
     ?.replace(/\W/g, "-")
     .toLowerCase()}.svg`;
 assert(name, "TechnologyIcon must have a name");
 ---
 
-<img src={src} style={`filter: brightness(0); ${style}`} height="23px" />
+<img src={src} style="filter: brightness(0);" height="23px" />

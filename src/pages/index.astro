@@ -4,6 +4,7 @@ import Head from "../components/Head.astro";
 import About from "../components/About.astro";
 import PersonalProjectCard from "../components/PersonalProjectCard.astro";
 import Experience from "../components/Experience.astro";
+import TechnologiesCategory from "../components/TechnologiesCategory.astro";
 ---
 
 <!DOCTYPE html>
@@ -21,6 +22,35 @@ import Experience from "../components/Experience.astro";
                 </div>
             </header>
             <About />
+        </div>
+        <h1>Technologies</h1>
+        <div class="technologies-category">
+            <p>These are some of the technologies I've used</p>
+            <TechnologiesCategory
+                src={`${import.meta.env.BASE_URL}client.svg`}
+                title="Frontend"
+                technologies={["React", "Astro", "AngularJS"]}
+            />
+            <TechnologiesCategory
+                src={`${import.meta.env.BASE_URL}server.svg`}
+                title="Backend"
+                technologies={["Java", "Spring", "NodeJS", "Hasura"]}
+            />
+            <TechnologiesCategory
+                src={`${import.meta.env.BASE_URL}database.svg`}
+                title="Database"
+                technologies={["Oracle Database", "PostgreSQL"]}
+            />
+            <TechnologiesCategory
+                src={`${import.meta.env.BASE_URL}robot.svg`}
+                title="Automation"
+                technologies={["Github Actions", "Gitlab"]}
+            />
+            <TechnologiesCategory
+                src={`${import.meta.env.BASE_URL}terminal.svg`}
+                title="OS"
+                technologies={["Windows", "Linux"]}
+            />
         </div>
         <h1>Experience</h1>
         <Experience

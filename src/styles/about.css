@@ -1,7 +1,6 @@
 .about {
     position: relative;
     width: var(--column-width);
-    height: 300px;
 }
 
 .about::before {

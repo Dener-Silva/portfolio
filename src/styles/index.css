@@ -29,6 +29,10 @@ h1 {
     font-family: 'kanit', regular;
 }
 
+p {
+    margin: 0.5rem 0;
+}
+
 header {
     margin: 20px;
     border-radius: 40px;
@@ -89,5 +93,19 @@ header {
 @media only screen and (max-width: 540px) {
     .header-title {
         width: 294px;
+    }
+}
+
+.technologies-category {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 652px) {
+    .technologies-category {
+        width: var(--column-width)
     }
 }

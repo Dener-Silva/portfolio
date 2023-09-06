@@ -49,75 +49,37 @@ import Technology from "./Technology.astro";
         }
         zIndex = 0;
         resetButton.disabled = true;
+        resize();
     };
 
     const about: HTMLElement | null = document.querySelector(".about");
     if (!about) {
         throw new Error("About div not found");
     }
-    addEventListener("resize", () => {
-        const height = cards[1].clientHeight;
-        about.style.height = `${height + 120}px`;
-    });
-    const height = cards[1].clientHeight;
-    about.style.height = `${height + 120}px`;
+    const resize = () => {
+        let height = 0;
+        for (const card of cards) {
+            if (card.clientHeight > height) {
+                height = card.clientHeight;
+            }
+        }
+        about.style.height = `${height + 25}px`;
+    };
+    addEventListener("resize", resize);
+    resize();
 </script>
 <div class="about">
     <AboutCard
         title="Hobbies"
         src={`${import.meta.env.BASE_URL}chip.svg`}
-        position={[80, 70]}
+        position={[0, 0]}
     >
         a
     </AboutCard>
     <AboutCard
-        title="Technologies"
-        src={`${import.meta.env.BASE_URL}chip.svg`}
-        position={[-20, 120]}
-    >
-        <h3>These are some of the technologies I've used professionally</h3>
-        <div class="tech-grid">
-            <img
-                src={`${import.meta.env.BASE_URL}client.svg`}
-                style="grid-area: fi;"
-                width="30px"
-                height="30px"
-            />
-            <span style="grid-area: ft;" class="tech-title">Frontend</span>
-            <img
-                src={`${import.meta.env.BASE_URL}server.svg`}
-                style="grid-area: bi;"
-                width="30px"
-                height="30px"
-            />
-            <span style="grid-area: bt;" class="tech-title">Backend</span>
-            <img
-                src={`${import.meta.env.BASE_URL}database.svg`}
-                style="grid-area: di;"
-                width="30px"
-                height="30px"
-            />
-            <span style="grid-area: dt;" class="tech-title">Database</span>
-            <div style="grid-area: fc;" class="tech-list">
-                <Technology name="React" />
-                <Technology name="AngularJS" />
-            </div>
-            <div style="grid-area: bc;" class="tech-list">
-                <Technology name="Java" />
-                <Technology name="Spring" />
-                <Technology name="NodeJS" />
-                <Technology name="Hasura" />
-            </div>
-            <div style="grid-area: dc;" class="tech-list">
-                <Technology name="Oracle Database" />
-                <Technology name="PostgreSQL" />
-            </div>
-        </div>
-    </AboutCard>
-    <AboutCard
         title="About Me"
         src={`${import.meta.env.BASE_URL}server.svg`}
-        position={[30, 20]}
+        position={[50, 25]}
     >
         <h3>Hi, I'm a software developer from Brazil!</h3>
         <p>I have worked on private commercial software since 2016.</p>

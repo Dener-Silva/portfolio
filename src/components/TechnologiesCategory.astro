@@ -1,0 +1,19 @@
+---
+const { src, title, technologies } = Astro.props;
+import "../styles/technologies.css";
+import Technology from "./Technology.astro";
+---
+
+<div class="technologies">
+    <div class="technologies-img">
+        <img src={src} width="31px" height="31px" />
+    </div>
+    <h3 class="technologies-title">{title}</h3>
+    <div class="technologies-list">
+        {
+            technologies.map((technology: string) => {
+                return <Technology name={technology} />;
+            })
+        }
+    </div>
+</div>

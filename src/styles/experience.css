@@ -38,7 +38,7 @@
     padding: 0px 20px;
 }
 
-.technologies {
+.experience-technologies {
     grid-area: t;
     display: flex;
     flex-direction: row;
