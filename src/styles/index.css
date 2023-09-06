@@ -19,10 +19,21 @@ body {
 .geometric-background {
     width: 100%;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
-    background-image: url("/colorful-2174045_1920.png");
+    background-image: url("/bg.png");
     background-size: cover;
+}
+
+.geometric-background-low-res {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+    z-index: -1;
 }
 
 h1 {
