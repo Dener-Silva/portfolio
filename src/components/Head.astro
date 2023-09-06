@@ -1,5 +1,5 @@
 ---
-const title = "title";
+const title = "Dener Rosa's Portfolio";
 const description =
     "Fullstack developer with focus on backend. I value simple and intuitive solutions.";
 ---
@@ -15,17 +15,28 @@ const description =
         rel="stylesheet"
     />
     <!-- SEO -->
-    <title>Dener Rosa's Portfolio</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
     <!-- Open Graph -->
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:site_name" content="Technocat Games" />
+    <meta property="og:site_name" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL("og-image.png", Astro.site)} />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@tcatdev" />
     <meta name="twitter:creator" content="@tcatdev" />
+    <!-- Script to avoid horizontal scroll -->
+    <script>
+        function setClientWidth(): void {
+            document.documentElement.style.setProperty(
+                "--client-width",
+                `${document.documentElement.clientWidth}px`
+            );
+        }
+        setClientWidth();
+        window.addEventListener("resize", setClientWidth);
+    </script>
 </head>

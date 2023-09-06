@@ -57,7 +57,7 @@ import Technology from "./Technology.astro";
         throw new Error("About div not found");
     }
     const resize = () => {
-        let height = 0;
+        let height = 250; // sane default
         for (const card of cards) {
             if (card.clientHeight > height) {
                 height = card.clientHeight;
@@ -66,6 +66,7 @@ import Technology from "./Technology.astro";
         about.style.height = `${height + 25}px`;
     };
     addEventListener("resize", resize);
+    addEventListener("load", resize);
     resize();
 </script>
 <div class="about">
