@@ -5,6 +5,7 @@ import About from "../components/About.astro";
 import PersonalProjectCard from "../components/PersonalProjectCard.astro";
 import Experience from "../components/Experience.astro";
 import TechnologiesCategory from "../components/TechnologiesCategory.astro";
+import HersheyCTA from "../components/HersheyCTA.astro";
 ---
 
 <!DOCTYPE html>
@@ -94,20 +95,28 @@ import TechnologiesCategory from "../components/TechnologiesCategory.astro";
                 ferramentas em Python para auxiliar na análise de logs.</span
             >
         </Experience>
+        <h1>Personal Projects</h1>
         <div class="personal-project-cards">
             <PersonalProjectCard
-                src={`${import.meta.env.BASE_URL}embraer.webp`}
-                technologies={["Java", "Oracle Database"]}
+                src={`${import.meta.env.BASE_URL}personal-website.png`}
+                name="Personal Website"
+                technologies={["Astro", "Github Actions"]}
+                href="https://technocatgames.com/"
             />
             <PersonalProjectCard
-                src={`${import.meta.env.BASE_URL}cardif.svg`}
-                technologies={["AngularJS", "Java", "Spring"]}
+                src={`${import.meta.env.BASE_URL}note-to-self.png`}
+                name="Note to Self (Game)"
+                technologies={["Godot"]}
+                href="https://t-cat-dev.itch.io/note-to-self"
             />
-            <PersonalProjectCard
-                src={`${import.meta.env.BASE_URL}pronto.png`}
-                technologies={["React", "NodeJS", "Hasura", "PostgreSQL"]}
-            />
+            <HersheyCTA>
+                <PersonalProjectCard
+                    src={`${import.meta.env.BASE_URL}hershey-ttf.png`}
+                    name="Hershey-TTF"
+                    technologies={["Python"]}
+                />
+            </HersheyCTA>
         </div>
-        <div style="height: 2000px;"></div>
+        <div style="height: 50vh;"></div>
     </body>
 </html>

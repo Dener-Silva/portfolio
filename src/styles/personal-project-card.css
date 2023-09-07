@@ -1,27 +1,50 @@
 .personal-project-card {
-    border-radius: 25px;
-    width: 100%;
+    border-radius: 28px;
     box-shadow: 0px 5px 20px #0004;
     background-color: white;
-    transition: margin 300ms ease-in-out, width 300ms ease-in-out;
+    margin: 20px;
+    transition: margin 300ms ease-in-out;
+    display: grid;
+    align-items: center;
+    position: relative;
+    grid-template: 0fr 0fr / 1fr 0fr;
+    grid-template-areas:
+        "i i"
+        "n t";
+    text-decoration: none;
+    color: inherit;
 }
 
 .personal-project-card:hover {
-    margin: -10px;
+    margin: 0px;
     z-index: 1;
-
 }
+
 
 .personal-project-card>img {
-    border-radius: 25px;
+    grid-area: i;
+    border-radius: 28px;
     width: 100%;
-    aspect-ratio: 1.6;
+    height: 165px;
     object-fit: cover;
+    transition: height 300ms ease-in-out;
 }
 
-.technologies-footer {
+.personal-project-card:hover>img {
+    height: 205px;
+}
+
+.personal-project-technologies {
+    grid-area: t;
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 15px;
+    height: 23px;
+}
+
+.personal-project-name {
+    grid-area: n;
+    padding-left: 15px;
+    font-weight: bold;
 }

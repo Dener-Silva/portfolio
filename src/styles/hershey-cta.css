@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "Hershey Roman Complex";
+    src: url("/Hershey_Roman_Complex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hershey Roman Duplex";
+    src: url("/Hershey_Roman_Duplex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hershey Greek Complex";
+    src: url("/Hershey_Greek_Complex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hershey Script Complex";
+    src: url("/Hershey_Script_Complex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hershey Script Simplex";
+    src: url("/Hershey_Script_Simplex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hershey Gothic English Triplex";
+    src: url("/Hershey_Gothic_English_Triplex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hershey Symbols";
+    src: url("/Hershey_Symbols.ttf") format("truetype");
+}
+
+#cta>* {
+    cursor: pointer;
+}
+
+#modal {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px) brightness(.5);
+    -webkit-backdrop-filter: blur(3px) brightness(.5);
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    animation: fade-in 500ms forwards;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--column-width);
+    max-height: calc(100vh - 40px);
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.modal-text {
+    margin: 10px 20px 0px 20px;
+}
+
+.modal-controls {
+    padding: 10px 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.modal-x {
+    float: right;
+    margin: -5px -15px 10px 10px;
+}
+
+#modal-text-sample {
+    font-family: "Hershey Roman Complex";
+    font-size: 24pt;
+    background-color: black;
+    color: lightgray;
+    border-radius: 20px;
+    padding: 35px;
+    line-break: anywhere;
+    overflow-y: auto;
+    height: 200px;
+}

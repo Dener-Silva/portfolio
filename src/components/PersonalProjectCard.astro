@@ -1,17 +1,17 @@
 ---
-const { src, technologies } = Astro.props;
+const { src, name, technologies, href } = Astro.props;
 import "../styles/personal-project-card.css";
 import TechnologyIcon from "./TechnologyIcon.astro";
 ---
 
-<div class="personal-project-card">
-    <img src={src} />
-    <slot />
-    <div class="technologies-footer">
+<a class="personal-project-card" target="_blank" href={href}>
+    <img src={src} alt="" />
+    <div class="personal-project-technologies">
         {
             technologies.map((technology: string) => {
-                return <TechnologyIcon name={technology} />;
+                return <TechnologyIcon name={technology} title={technology} />;
             })
         }
     </div>
-</div>
+    <span class="personal-project-name">{name}</span>
+</a>
