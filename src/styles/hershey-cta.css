@@ -1,4 +1,9 @@
 @font-face {
+    font-family: "Adobe NotDef";
+    src: url("/Adobe_NotDef.ttf") format("truetype");
+}
+
+@font-face {
     font-family: "Hershey Roman Complex";
     src: url("/Hershey_Roman_Complex.ttf") format("truetype");
 }
@@ -55,8 +60,8 @@
 .modal-content {
     display: flex;
     flex-direction: column;
-    max-width: var(--column-width);
-    max-height: calc(100vh - 40px);
+    width: min-content;
+    max-height: 100vh;
     background-color: white;
     border-radius: 25px;
     padding: 5px;
@@ -79,7 +84,7 @@
 }
 
 #modal-text-sample {
-    font-family: "Hershey Roman Complex";
+    font-family: Hershey Roman Complex, Adobe NotDef;
     font-size: 24pt;
     background-color: black;
     color: lightgray;
@@ -88,4 +93,5 @@
     line-break: anywhere;
     overflow-y: auto;
     height: 200px;
+    width: calc(var(--column-width) - 80px);
 }

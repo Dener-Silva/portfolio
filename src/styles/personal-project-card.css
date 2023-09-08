@@ -21,7 +21,7 @@
 }
 
 
-.personal-project-card>img {
+.personal-project-img {
     grid-area: i;
     border-radius: 28px;
     width: 100%;
@@ -30,7 +30,13 @@
     transition: height 300ms ease-in-out;
 }
 
-.personal-project-card:hover>img {
+.personal-project-new-window {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.personal-project-card:hover>.personal-project-img {
     height: 205px;
 }
 

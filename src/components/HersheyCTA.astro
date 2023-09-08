@@ -8,8 +8,8 @@ for (let i = 33; i < 65; i++) {
 for (let i = 91; i < 97; i++) {
     asciiCharacters.push(String.fromCharCode(i));
 }
-const sample = `the quick brown fox jumps over the lazy dog
-THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+const sample = `You can edit this text.
+The quick brown fox jumps over the lazy dog
 ${asciiCharacters.join("")}`;
 
 const fontFamilies = [
@@ -80,13 +80,8 @@ const fontFamilies = [
         sample.style.fontSize = `${size.value}pt`;
     };
     font.onchange = () => {
-        sample.style.fontFamily = font.value;
+        sample.style.fontFamily = `${font.value}, Adobe NotDef`;
     };
-    const removeHighASCIICharacters = (e: Event) => {
-        sample.value = sample.value.replaceAll(/[^ -~\n]/g, "");
-    };
-    sample.onkeyup = removeHighASCIICharacters;
-    sample.onchange = removeHighASCIICharacters;
 </script>
 <div id="cta" tabindex="0">
     <slot />
@@ -104,8 +99,8 @@ const fontFamilies = [
             </button>
             <p>
                 The Hershey vector fonts were originally created in the 60s.
-                They are described as a set of vectors, which I converted to TTF
-                using a Python script.
+                They are described as a set of vector coordinates, which I
+                converted to TTF using a Python script.
             </p>
             <p>
                 You can check out the GitHub repo <a
