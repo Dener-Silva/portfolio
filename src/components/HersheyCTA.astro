@@ -72,7 +72,9 @@ const fontFamilies = [
 
     size.onchange = () => {
         const value = size.valueAsNumber;
-        if (value < 12) {
+        if (isNaN(value)) {
+            size.value = sample.style.fontSize.replaceAll(/\D/g, "");
+        } else if (value < 12) {
             size.value = "12";
         } else if (value > 120) {
             size.value = "120";
@@ -128,6 +130,11 @@ const fontFamilies = [
                 <input id="size" type="number" min="12" max="120" step="1" />
             </div>
         </div>
-        <textarea id="modal-text-sample" placeholder={sample}></textarea>
+        <textarea
+            id="modal-text-sample"
+            style="font-size: 24pt"
+            placeholder={sample}
+        >
+        </textarea>
     </div>
 </div>
