@@ -6,6 +6,7 @@ import PersonalProjectCard from "../components/PersonalProjectCard.astro";
 import Experience from "../components/Experience.astro";
 import TechnologiesCategory from "../components/TechnologiesCategory.astro";
 import HersheyCTA from "../components/HersheyCTA.astro";
+import EmailButton from "../components/EmailButton.astro";
 ---
 
 <!DOCTYPE html>
@@ -117,6 +118,22 @@ import HersheyCTA from "../components/HersheyCTA.astro";
                 />
             </HersheyCTA>
         </div>
-        <div style="height: 50vh;"></div>
+        <div class="email-background">
+            <div class="email-container transparent-window">
+                <h1>Get in Touch</h1>
+                <img
+                    src={`${import.meta.env.BASE_URL}email.svg`}
+                    width="200px"
+                    height="100px"
+                />
+                <EmailButton />
+            </div>
+            <span class="copyright-notice">
+                <a
+                    href="https://www.freepik.com/free-photo/nature-colorful-landscape-dusk-cloud_1088375.htm"
+                    >Image by mrsiraphol</a
+                > on Freepik
+            </span>
+        </div>
     </body>
 </html>

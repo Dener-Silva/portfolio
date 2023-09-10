@@ -1,0 +1,94 @@
+---
+import "../styles/email-button.css";
+
+let email = import.meta.env.EMAIL;
+// To obfuscate the email I encrypt it with a random key.
+// This is not meant to be secure, but just to prove the client has a working AES implementation, which should rule out most crawlers.
+const key = await crypto.subtle.generateKey(
+    {
+        name: "AES-GCM",
+        length: 256,
+    },
+    true,
+    ["encrypt"]
+);
+const iv = crypto.getRandomValues(new Uint8Array(12));
+const obfuscatedEmailBuffer = await crypto.subtle.encrypt(
+    {
+        name: "AES-GCM",
+        iv: iv,
+    },
+    key,
+    new TextEncoder().encode(`mailto:${email}`)
+);
+// Buffer.from only works in NodeJS, it doesn't exist on browsers!
+const obfuscatedEmail = Buffer.from(obfuscatedEmailBuffer).toString("base64");
+const keyString = Buffer.from(
+    await crypto.subtle.exportKey("raw", key)
+).toString("base64");
+const ivString = Buffer.from(iv).toString("base64");
+---
+
+<script>
+    async function decodeBase64(data: string): Promise<Uint8Array> {
+        const res = await fetch(`data:application/octet-stream;base64,${data}`);
+        return new Uint8Array(await res.arrayBuffer());
+    }
+
+    async function deobfuscateEmail(
+        obfuscatedEmail: string,
+        keyString: string,
+        ivString: string
+    ) {
+        // Decode the Base64 strings
+        const obfuscatedEmailBuffer = await decodeBase64(obfuscatedEmail);
+        const rawKey = await decodeBase64(keyString);
+        const iv = await decodeBase64(ivString);
+        // Import key
+        const key = await window.crypto.subtle.importKey(
+            "raw",
+            rawKey,
+            "AES-GCM",
+            true,
+            ["decrypt"]
+        );
+        // Decrypt
+        const emailBuffer = await window.crypto.subtle.decrypt(
+            {
+                name: "AES-GCM",
+                iv: iv,
+            },
+            key,
+            obfuscatedEmailBuffer
+        );
+        return new TextDecoder().decode(emailBuffer);
+    }
+
+    const reveal = document.getElementById("reveal") as HTMLButtonElement;
+    reveal.onclick = async () => {
+        const email = document.getElementById("email") as HTMLAnchorElement;
+
+        const { obfuscatedEmail, key, iv } = email.dataset;
+        const text = await deobfuscateEmail(obfuscatedEmail!, key!, iv!);
+        email.textContent = text.split(":")[1];
+        email.href = text;
+        reveal.disabled = true;
+        reveal.style.animation = "fade-out 1s forwards";
+        reveal.addEventListener("animationend", (e) => {
+            if (e.animationName === "fade-out") {
+                reveal.style.visibility = "hidden";
+            }
+        });
+    };
+</script>
+<div>
+    <span>Send me an email at</span>
+    <div class="reveal-container">
+        <button id="reveal">Click to Reveal</button>
+        <a
+            id="email"
+            data-obfuscated-email={obfuscatedEmail}
+            data-key={keyString}
+            data-iv={ivString}></a>
+    </div>
+</div>
