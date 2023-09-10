@@ -40,7 +40,6 @@ const fontFamilies = [
         modal.style.display = "flex";
         modal.style.animation = "fade-in 500ms forwards";
         document.body.style.overflow = "hidden";
-        sample.value = sample.placeholder;
     };
     const closeModal = () => {
         modal.style.animation = "fade-out 500ms forwards";
@@ -69,7 +68,13 @@ const fontFamilies = [
     // page loads
     font.value = "Hershey Roman Complex";
     size.value = "24";
+    sample.value = sample.placeholder;
 
+    size.onkeydown = (e) => {
+        if (!e.ctrlKey && e.key.match(/^\D$/g)) {
+            e.preventDefault();
+        }
+    };
     size.onchange = () => {
         const value = size.valueAsNumber;
         if (isNaN(value)) {
