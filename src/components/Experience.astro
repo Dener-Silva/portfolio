@@ -1,5 +1,5 @@
 ---
-const { src, technologies, company, backgroundColor } = Astro.props;
+const { src, technologies, company, year, backgroundColor } = Astro.props;
 import "../styles/experience.css";
 import Technology from "./Technology.astro";
 ---
@@ -9,6 +9,7 @@ import Technology from "./Technology.astro";
         <img class="experience-img" src={src} alt={`${company} logo`} />
     </div>
     <h3 class="experience-company">{company}</h3>
+    <span class="experience-year">{year}</span>
     <div class="experience-description">
         <slot />
     </div>

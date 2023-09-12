@@ -4,7 +4,7 @@
     border-radius: 40px;
     box-shadow: 0px 5px 20px #0004;
     display: grid;
-    grid-template: 0fr minmax(1fr, 100%) 0fr / 0fr 1fr 1fr;
+    grid-template: 0fr 0fr 0fr / 0fr 1fr 0fr;
     grid-template-areas:
         "i c y"
         "i d d"
@@ -32,6 +32,15 @@
     grid-area: c;
 }
 
+.experience-year {
+    grid-area: y;
+    display: flex;
+    padding-right: 30px;
+    color: #555;
+    text-wrap: nowrap;
+    align-items: center;
+}
+
 .experience-description {
     grid-area: d;
     align-items: start;
@@ -49,7 +58,7 @@
 
 @media only screen and (max-width: 800px) {
     .experience {
-        grid-template: 0fr 0fr 0fr 0fr / 1fr 1fr;
+        grid-template: 0fr 0fr 0fr 0fr / 1fr 0fr;
         grid-template-areas:
             "i i"
             "c y"
