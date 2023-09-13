@@ -40,6 +40,10 @@ h1 {
     font-family: 'kanit', regular;
 }
 
+h2 {
+    font-size: 1.17em;
+}
+
 p {
     margin: 0.5rem 0;
 }

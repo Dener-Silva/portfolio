@@ -1,14 +1,40 @@
 ---
-const { src, technologies, company, year, backgroundColor } = Astro.props;
+const {
+    backgroundColor,
+    src,
+    company,
+    outsource,
+    outsourceSrc,
+    outsourceColor,
+    year,
+    technologies,
+} = Astro.props;
 import "../styles/experience.css";
 import Technology from "./Technology.astro";
 ---
 
 <div class="experience">
     <div class="experience-img" style={`background-color: ${backgroundColor};`}>
-        <img class="experience-img" src={src} alt={`${company} logo`} />
+        <img src={src} alt={`${company} logo`} />
+        {
+            outsource && (
+                <span
+                    class="experience-outsource"
+                    style={outsourceColor ? `color: ${outsourceColor}` : ""}
+                >
+                    Outsourcing by
+                    <img
+                        src={outsourceSrc}
+                        style="display: inline;"
+                        height="18px"
+                        alt={`${outsource} logo`}
+                        title={outsource}
+                    />
+                </span>
+            )
+        }
     </div>
-    <h3 class="experience-company">{company}</h3>
+    <h2 class="experience-company">{company}</h2>
     <span class="experience-year">{year}</span>
     <div class="experience-description">
         <slot />
