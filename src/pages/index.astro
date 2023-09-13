@@ -7,6 +7,8 @@ import Experience from "../components/Experience.astro";
 import TechnologiesCategory from "../components/TechnologiesCategory.astro";
 import HersheyCTA from "../components/HersheyCTA.astro";
 import EmailButton from "../components/EmailButton.astro";
+import multE from "../images/mult-e.svg";
+import psmCompany from "../images/psm-company.png";
 ---
 
 <!DOCTYPE html>
@@ -66,7 +68,7 @@ import EmailButton from "../components/EmailButton.astro";
             technologies={["Java", "Oracle Database"]}
             company="Embraer"
             outsource="Mult-e"
-            outsourceSrc={`${import.meta.env.BASE_URL}mult-e.svg`}
+            outsourceSrc={multE}
             outsourceColor="white"
             year="2016-2020"
         >
@@ -82,7 +84,7 @@ import EmailButton from "../components/EmailButton.astro";
             technologies={["AngularJS", "Java", "Spring"]}
             company="BNP Paribas Cardif"
             outsource="PSM Company"
-            outsourceSrc={`${import.meta.env.BASE_URL}psm-company.png`}
+            outsourceSrc={psmCompany}
             year="2020-2021"
         >
             <span
@@ -131,6 +133,7 @@ import EmailButton from "../components/EmailButton.astro";
                     src={`${import.meta.env.BASE_URL}email.svg`}
                     width="200px"
                     height="100px"
+                    alt=""
                 />
                 <EmailButton />
             </div>
