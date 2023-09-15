@@ -14,6 +14,7 @@ body {
     font-size: large;
     background-image: url("/noise.svg");
     background-size: 100px;
+    gap: 40px;
 }
 
 .geometric-background {
@@ -38,6 +39,7 @@ body {
 
 h1 {
     font-family: 'kanit', regular;
+    margin: 0;
 }
 
 h2 {
@@ -49,10 +51,9 @@ p {
 }
 
 header {
-    margin: 20px;
-    border-radius: 40px;
     width: var(--column-width);
     height: 400px;
+    padding: 20px;
     display: grid;
     grid-template-areas:
         ". . ."
@@ -131,10 +132,10 @@ header {
     width: calc(var(--column-width) + 40px);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+    margin-top: -20px;
 }
 
 .email-background {
-    margin-top: 40px;
     display: flex;
     position: relative;
     width: 100%;
