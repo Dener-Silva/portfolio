@@ -5,7 +5,6 @@ import About from "../components/About.astro";
 import PersonalProjectCard from "../components/PersonalProjectCard.astro";
 import Experience from "../components/Experience.astro";
 import TechnologiesCategory from "../components/TechnologiesCategory.astro";
-import HersheyCTA from "../components/HersheyCTA.astro";
 import EmailButton from "../components/EmailButton.astro";
 import multE from "../images/mult-e.svg";
 import psmCompany from "../images/psm-company.png";
@@ -70,12 +69,10 @@ import psmCompany from "../images/psm-company.png";
             outsource="Mult-e"
             outsourceSrc={multE}
             outsourceColor="white"
-            year="2016-2020"
-        >
+            year="2016-2020">
             <span
-                >I worked on system integration software for the engineering
-                team at the E2 project. There I collaborated with team members
-                on the US and Germany.</span
+                >I worked on system integration software for the engineering team at the E2
+                project. There I collaborated with team members on the US and Germany.</span
             >
         </Experience>
         <Experience
@@ -85,11 +82,10 @@ import psmCompany from "../images/psm-company.png";
             company="BNP Paribas Cardif"
             outsource="PSM Company"
             outsourceSrc={psmCompany}
-            year="2020-2021"
-        >
+            year="2020-2021">
             <span
-                >I worked on internal software in the insurance sector, which
-                were used at many countries in Latin America.</span
+                >I worked on internal software in the insurance sector, which were used at
+                many countries in Latin America.</span
             >
         </Experience>
         <Experience
@@ -97,20 +93,19 @@ import psmCompany from "../images/psm-company.png";
             src={`${import.meta.env.BASE_URL}pronto.png`}
             technologies={["React", "NodeJS", "Hasura", "PostgreSQL"]}
             company="Pronto Combustíveis"
-            year="2021-2022"
-        >
+            year="2021-2022">
             <span
-                >Pronto was a startup in the oil industry. I worked on their
-                management and automation systems.</span
+                >Pronto was a startup in the oil industry. I worked on their management and
+                automation systems.</span
             >
         </Experience>
         <h1>Personal Projects</h1>
         <div class="personal-project-cards">
             <PersonalProjectCard
-                src={`${import.meta.env.BASE_URL}personal-website.png`}
-                name="Personal Website"
-                technologies={["Astro", "Github Actions"]}
-                href="https://technocatgames.com/"
+                src={`${import.meta.env.BASE_URL}astropirates.png`}
+                name="AstroPirates"
+                technologies={["NodeJS", "PixiJS", "React"]}
+                href="https://dener-silva.github.io/astropirates/"
             />
             <PersonalProjectCard
                 src={`${import.meta.env.BASE_URL}note-to-self.png`}
@@ -118,13 +113,12 @@ import psmCompany from "../images/psm-company.png";
                 technologies={["Godot"]}
                 href="https://t-cat-dev.itch.io/note-to-self"
             />
-            <HersheyCTA>
-                <PersonalProjectCard
-                    src={`${import.meta.env.BASE_URL}hershey-ttf.png`}
-                    name="Hershey-TTF"
-                    technologies={["Python"]}
-                />
-            </HersheyCTA>
+            <PersonalProjectCard
+                src={`${import.meta.env.BASE_URL}personal-website.png`}
+                name="Personal Website"
+                technologies={["Astro", "Github Actions"]}
+                href="https://technocatgames.com/"
+            />
         </div>
         <div class="email-background">
             <div class="email-container transparent-window">
